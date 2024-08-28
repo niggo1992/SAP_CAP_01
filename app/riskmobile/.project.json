@@ -1,0 +1,54 @@
+{
+    "Credential": "cf",
+    "Template": {
+        "Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+        "Name": "CRUD",
+        "Version": "0.0.1"
+    },
+    "CF": {
+        "Target": "",
+        "Organization": "",
+        "Space": "",
+        "Deploy": {
+            "Description": "riskmobile",
+            "WebClient": {
+                "Runtime": "preview",
+                "URL": ""
+            },
+            "Destination": [{
+                "CF": "riskmanagement-app-srv",
+                "MDK": "../service/riskmanagementSvcs/",
+                "URL": ""
+            }]
+        }
+    },
+    "MobileService": {
+        "Type": "standard",
+        "AdminAPI": "",
+        "AppId": "lcap.riskmanagement.riskmobile",
+        "Destination": []
+    },
+    "Onboarding": {
+        "Schema": "sapmobilesvcs",
+        "TimeZone": "UTC",
+        "URL": ""
+    },
+    "LCAP": {
+        "FullName": "RiskMobile",
+        "Service": [{
+            "mdk": "riskmobile/Services/riskmanagementService.service",
+            "cap": {
+                "name": "riskmanagementService",
+                "sourcePath": "srv/service.cds",
+                "path": "/service/riskmanagementSvcs/",
+                "entryPath": "/service/riskmanagementSvcs",
+                "destination": "riskmanagement-app-srv",
+                "value": "1"
+            }
+        }],
+        "sourceTemplate": {
+            "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+            "version": "1.40.12"
+        }
+    }
+}
