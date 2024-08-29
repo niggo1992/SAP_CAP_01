@@ -1,54 +1,48 @@
 {
-    "Credential": "cf",
-    "Template": {
-        "Id": "@ext-mdkvsc-npm-dev/generator-mdk",
-        "Name": "CRUD",
-        "Version": "0.0.1"
-    },
-    "CF": {
-        "Target": "",
-        "Organization": "",
-        "Space": "",
-        "Deploy": {
-            "Description": "risksmobile",
-            "WebClient": {
-                "Runtime": "preview",
-                "URL": ""
-            },
-            "Destination": [{
-                "CF": "riskmanagement-app-srv",
-                "MDK": "../service/riskmanagementSvcs/",
-                "URL": ""
-            }]
-        }
-    },
-    "MobileService": {
-        "Type": "standard",
-        "AdminAPI": "",
-        "AppId": "lcap.riskmanagement.risksmobile",
-        "Destination": []
-    },
-    "Onboarding": {
-        "Schema": "sapmobilesvcs",
-        "TimeZone": "UTC",
-        "URL": ""
-    },
-    "LCAP": {
-        "FullName": "RisksMobile",
-        "Service": [{
-            "mdk": "risksmobile/Services/riskmanagementService.service",
-            "cap": {
-                "name": "riskmanagementService",
-                "sourcePath": "srv/service.cds",
-                "path": "/service/riskmanagementSvcs/",
-                "entryPath": "/service/riskmanagementSvcs",
-                "destination": "riskmanagement-app-srv",
-                "value": "1"
-            }
-        }],
-        "sourceTemplate": {
-            "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
-            "version": "1.40.12"
-        }
-    }
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "CRUD",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "abca3ec9-3173-4722-a20d-52454c4fc633",
+		"Space": "dcb786fe-415f-4c3c-a4db-d81cfa84d321"
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/abca3ec9-3173-4722-a20d-52454c4fc633/space/dcb786fe-415f-4c3c-a4db-d81cfa84d321/",
+		"AppId": "lcap.riskmanagement.risksmobile",
+		"Destination": [],
+		"Create": true,
+		"DestinationName": "riskmanagementService",
+		"DestinationUrl": "https://e12a4e2atrial-e12a4e2atrial-dev-riskmanagement-srv.cfapps.us10-001.hana.ondemand.com/service/riskmanagementSvcs",
+		"Uaa": "riskmanagement-uaa"
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=lcap.riskmanagement.risksmobile&ClientId=33fcdb47-92b3-410f-9cb2-e3adffdd3565&ServerUrl=https://e12a4e2atrial-dev-lcap-riskmanagement-risksmobile.cfapps.us10-001.hana.ondemand.com&SapCloudPlatformEndpoint=https://e12a4e2atrial-dev-lcap-riskmanagement-risksmobile.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://e12a4e2atrial-dev-lcap-riskmanagement-risksmobile.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://e12a4e2atrial-dev-lcap-riskmanagement-risksmobile.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://e12a4e2atrial-dev-lcap-riskmanagement-risksmobile.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token&multiUser=false"
+	},
+	"LCAP": {
+		"FullName": "RisksMobile",
+		"Service": [
+			{
+				"mdk": "risksmobile/Services/riskmanagementService.service",
+				"cap": {
+					"name": "riskmanagementService",
+					"sourcePath": "srv/service.cds",
+					"path": "/service/riskmanagementSvcs/",
+					"entryPath": "/service/riskmanagementSvcs",
+					"destination": "riskmanagement-app-srv",
+					"value": "1"
+				}
+			}
+		],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	}
 }
