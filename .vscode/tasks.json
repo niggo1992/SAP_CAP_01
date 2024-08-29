@@ -28,6 +28,21 @@
       "enableDiscovery": "true"
     },
     {
+      "label": "PreLaunchTask for Run Riskmanagement with Live Data",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "dev-cap-tools",
+        "gen-entrypoint"
+      ],
+      "dependsOn": [
+        "BuildMDK"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
       "label": "npm-install",
       "type": "process",
       "command": "npm",
@@ -35,7 +50,7 @@
         "install"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/"
+        "cwd": "${workspaceFolder}"
       }
     },
     {
@@ -54,26 +69,11 @@
         "npm-install"
       ],
       "options": {
-        "cwd": "${workspaceFolder}/"
+        "cwd": "${workspaceFolder}"
       }
     },
     {
       "label": "dev-project",
-      "type": "process",
-      "command": "npx",
-      "args": [
-        "dev-cap-tools",
-        "gen-entrypoint"
-      ],
-      "dependsOn": [
-        "BuildMDK"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}/"
-      }
-    },
-    {
-      "label": "PreLaunchTask for Run Riskmanagement with Live Data",
       "type": "process",
       "command": "npx",
       "args": [
